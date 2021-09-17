@@ -1,10 +1,10 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const Animal = mongoose.Schema({
-  name: string,
+  name: String,
   found_at: Date,
-  status: stirng,
-  location: string
-})
+  status: String,
+  location: String,
+});
 
-export default mongoose.model('Animal', Animal)
+export default mongoose.model('Animal', Animal);

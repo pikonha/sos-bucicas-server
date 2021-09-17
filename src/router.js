@@ -1,9 +1,13 @@
-import { Router } from 'express'
+import { Router } from 'express';
 
-const router = new Router()
+import { getAnimals } from './services/index.js';
 
-router.get("/", async (_, res) => {
-  res.json({msg: "ok"})
-})
+const router = new Router();
 
-export default router
+router.get('/animals', async (_, res) => {
+  const animals = await getAnimals();
+
+  res.json({ animals });
+});
+
+export default router;
