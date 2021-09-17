@@ -2,7 +2,7 @@
 
 ## Roadmap
 
-- [ ] Adicionar animal resgatado
+- [X] Adicionar animal resgatado
   - id
   - nome
   - achado em
@@ -12,7 +12,7 @@
     - perdido
     - localização
       - geoposition
-- [ ] Lista animal resgatado
+- [X] Lista animal resgatado
 - [ ] Atualizar animal resgatad
   - [ ] Marcar como adotado
 - [ ] Deletar animal resgatad

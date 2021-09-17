@@ -7,10 +7,13 @@ import db from './database/index.js';
 
 (async () => {
   dotenv();
+
   await db.connect();
   const app = Express();
 
+  app.use(Express.json());
   app.use(cors());
   app.use(router);
+
   app.listen(3000, () => console.log('server bound to port 3000'));
 })();

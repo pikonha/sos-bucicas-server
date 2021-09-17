@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Animal = mongoose.Schema({
   name: String,
-  found_at: Date,
+  foundAt: Date,
   status: String,
   location: String,
 });
