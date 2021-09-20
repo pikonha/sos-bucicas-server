@@ -3,7 +3,7 @@ import {
   celebrate, Joi, Segments,
 } from 'celebrate';
 
-import { getAnimals, createAnimals, deleteAnimals } from './services/index.js';
+import { getAnimals, createAnimals, deleteAnimals, updateAnimals } from './services/index.js';
 
 const router = new Router();
 
@@ -44,11 +44,20 @@ router.post('/animals',
   });
 
 router.delete('/animals/:id',
-  async(req, res)=> {
+  async(req, res) => {
     const id = req.params.id;
     const animal= await deleteAnimals(id);
 
     res.json({ animal });
+  });
+
+router.post('/animals/:id',
+  async(req, res) => {
+    const id = req.params.id;
+    const updateData = req.body;
+    const animal = await updateAnimals(id, updateData);
+
+    res.json({ animal })
   });
 
 export default router;
