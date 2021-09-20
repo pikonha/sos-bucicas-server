@@ -3,7 +3,7 @@ import {
   celebrate, Joi, Segments,
 } from 'celebrate';
 
-import { getAnimals, createAnimals } from './services/index.js';
+import { getAnimals, createAnimals, deleteAnimals } from './services/index.js';
 
 const router = new Router();
 
@@ -26,7 +26,7 @@ router.post('/animals',
   celebrate({
     [Segments.BODY]: Joi.object().keys({
       name: Joi.string().required(),
-      foundAt: Joi.date().format('MM-DD-YYYY').required(),
+      foundAt: Joi.date().required(),
       status: Joi.string().required(),
       location: Joi.string().required(),
     }),
@@ -39,6 +39,14 @@ router.post('/animals',
     const animal = await createAnimals({
       name, foundAt, status, location,
     });
+
+    res.json({ animal });
+  });
+
+router.delete('/animals/:id',
+  async(req, res)=> {
+    const id = req.params.id;
+    const animal= await deleteAnimals(id);
 
     res.json({ animal });
   });

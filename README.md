@@ -15,5 +15,5 @@
 - [X] Lista animal resgatado
 - [ ] Atualizar animal resgatad
   - [ ] Marcar como adotado
-- [ ] Deletar animal resgatad
+- [X] Deletar animal resgatad
 

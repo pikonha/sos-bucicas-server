@@ -1,6 +1,6 @@
 import { Animal } from '../database/models/index.js';
 
-export default async function getAnimals({
+export default async function createAnimals({
   name, foundAt, status, location,
 }) {
   const animal = await Animal.create({
