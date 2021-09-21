@@ -45,10 +45,15 @@ router.post('/animals',
 
 router.delete('/animals/:id',
   async(req, res) => {
-    const id = req.params.id;
-    const animal= await deleteAnimals(id);
+    try {
+      const id = req.params.id;
+      const animal= await deleteAnimals(id);
 
-    res.json({ animal });
+      if (!animal) res.status(404).send("No animal found");
+      res.status(200).send();
+    } catch (err){
+      res.status(500).send(err);
+    }
   });
 
 router.post('/animals/:id',

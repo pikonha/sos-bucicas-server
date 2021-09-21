@@ -13,7 +13,7 @@
     - localização
       - geoposition
 - [X] Lista animal resgatado
-- [ ] Atualizar animal resgatad
-  - [ ] Marcar como adotado
+- [X] Atualizar animal resgatad
+  - [X] Marcar como adotado
 - [X] Deletar animal resgatad
 
