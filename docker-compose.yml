@@ -1,6 +1,16 @@
 version: "3"
 
 services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: mongo
+
   db:
     image: mongo
     container_name: db

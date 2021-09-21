@@ -17,3 +17,8 @@
   - [X] Marcar como adotado
 - [X] Deletar animal resgatad
 
+
+## Como rodar
+
+`docker-compose up`
+
