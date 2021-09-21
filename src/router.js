@@ -49,7 +49,7 @@ router.delete('/animals/:id',
       const id = req.params.id;
       const animal= await deleteAnimals(id);
 
-      if (!animal) res.status(404).send("No animal found");
+      if (!animal) return res.status(404).send("No animal found");
       res.status(200).send();
     } catch (err){
       res.status(500).send(err);
