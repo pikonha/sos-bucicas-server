@@ -52,6 +52,14 @@ router.delete('/animals/:id',
   });
 
 router.post('/animals/:id',
+  celebrate({
+    [Segments.BODY]: Joi.object().keys({
+      name: Joi.string(),
+      foundAt: Joi.date(),
+      status: Joi.string(),
+      location: Joi.string(),
+    }),
+  }),
   async(req, res) => {
     const id = req.params.id;
     const updateData = req.body;
